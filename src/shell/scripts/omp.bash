@@ -87,7 +87,7 @@ function _omp_get_primary() {
                 tr -d '\0'
         )
     fi
-    echo "${prompt@P}"
+    printf "%q" "${prompt}"
 }
 
 function _omp_get_secondary() {
@@ -99,7 +99,7 @@ function _omp_get_secondary() {
         # Disable in POSIX mode.
         echo '> '
     else
-        echo "${_omp_secondary_prompt@P}"
+        printf "%q" "${_omp_secondary_prompt}"
     fi
 }
 
